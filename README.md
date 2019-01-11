@@ -51,6 +51,8 @@ import generator from '@kambria/redeem-code-generator';
 
 * verifyRedeemCode()
 
+  Params:
+
   * signerAddr: \<string> Signer's address
   * code: \<object> Redeem code (genRedeemCode returned)
 

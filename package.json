@@ -1,0 +1,25 @@
+{
+  "name": "@kambria/redeem-code-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "npm run build && mocha",
+    "release": "npm run build && npm publish",
+    "build": "babel src -d dist"
+  },
+  "author": "Tu Phan",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "bignumber.js": "^8.0.1",
+    "ethereumjs-abi": "^0.6.5",
+    "ethereumjs-util": "^6.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9"
+  }
+}

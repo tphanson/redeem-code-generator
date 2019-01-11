@@ -3,7 +3,7 @@ var ethUtil = require('ethereumjs-util');
 var generator = require('../dist');
 
 const ADDRESS = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
-const PRIVATE_KEY = ethUtil.toBuffer('0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3');
+const PRIVATE_KEY = 'c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3';
 const USER = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
 const VALUE = '5000000000000000000000';
 const GENTIME = '1547102770';

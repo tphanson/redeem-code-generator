@@ -1,11 +1,13 @@
-global.crypto = require('crypto'); // For generate cryptographycally secure-random number
-var BigNumber = require('bignumber.js');
+var crypto = require('crypto');
+var ethUtil = require('ethereumjs-util');
 
 var Util = function () { }
 
 Util.rand = function (bits) {
-  var randomNum = BigNumber.random(Math.floor(bits / 4));
-  randomNum = randomNum.toString().replace('0.', '');
+  bits = bits ? bits : 256;
+  var randomByte = crypto.randomBytes(Math.floor(bits / 8));
+  var randomBN = new ethUtil.BN(randomByte);
+  var randomNum = randomBN.toString();
   return randomNum;
 }
 

@@ -6,6 +6,12 @@ var signer = require('./signer');
 
 var Generator = function () { }
 
+Generator.priv2Addr = function (priv) {
+  priv = ethUtil.toBuffer(utils.padHex(priv));
+  var addr = ethUtil.privateToAddress(priv);
+  return utils.padHex(ethUtil.bufferToHex(addr));
+}
+
 Generator.genRedeemCode = function (user, value, genTimestamp, unlockTimestamp, priv) {
   priv = ethUtil.toBuffer(utils.padHex(priv));
   var entropy = utils.rand(256);

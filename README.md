@@ -7,7 +7,7 @@ This lib can be used for Token Distribution Potal to generate redeem code.
 Install node modules
 
 ```
-npm install
+npm install --save @kambria/redeem-code-generator
 ```
 
 ## How to test?
@@ -23,7 +23,7 @@ npm test
 ### Using in Nodejs:
 
 ```
-var generator require('@kambria/redeem-code-generator');
+var generator = require('@kambria/redeem-code-generator');
 ```
 
 
@@ -35,14 +35,24 @@ import generator from '@kambria/redeem-code-generator';
 
 ### Methods
 
+* priv2Addr()
+
+  Params:
+
+  * priv: \<string> Signer's private key
+
+  Outputs:
+
+  * addr: \<string> The relevant address
+
 * genRedeemCode()
 
   Params:
 
   * user: \<string> Investor's address
   * value: \<string> Number of token
-  * genTimestamp: \<string> Timestamp of code generation (in second)
-  * unlockTimestamp: \<string> Timestamp of code unlock (in second)
+  * genTimestamp: \<string> Timestamp of code generation (in seconds)
+  * unlockTimestamp: \<string> Timestamp of code unlock (in seconds)
   * priv: \<string> Signer's private key
 
   Outputs:

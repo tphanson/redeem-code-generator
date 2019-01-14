@@ -1,5 +1,4 @@
 var assert = require('assert');
-var ethUtil = require('ethereumjs-util');
 var generator = require('../dist');
 
 const ADDRESS = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
@@ -12,6 +11,14 @@ const UNLOCKTIME = '1549694770';
 var _CODE = null;
 
 describe('Redeem code', function () {
+  
+  describe('priv2Addr()', function () {
+    it('generate address from privatekey', function () {
+      let addr = generator.priv2Addr(PRIVATE_KEY);
+      assert.equal(addr, ADDRESS);
+    });
+  });
+
   describe('genRedeemCode()', function () {
     it('should return an object', function () {
       let code = generator.genRedeemCode(USER, VALUE, GENTIME, UNLOCKTIME, PRIVATE_KEY);

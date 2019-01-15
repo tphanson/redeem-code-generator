@@ -51,7 +51,6 @@ import generator from '@kambria/redeem-code-generator';
 
   * user: \<string> Investor's address
   * value: \<string> Number of token
-  * genTimestamp: \<string> Timestamp of code generation (in seconds)
   * unlockTimestamp: \<string> Timestamp of code unlock (in seconds)
   * priv: \<string> Signer's private key
 
@@ -80,10 +79,9 @@ var generator = require('@kambria/redeem-code-generator');
 const PRIVATE_KEY = 'c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3';
 const USER = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
 const VALUE = '5000000000000000000000';
-const GENTIME = '1547102770';
 const UNLOCKTIME = '1549694770';
 
-var code = generator.genRedeemCode(USER, VALUE, GENTIME, UNLOCKTIME, PRIVATE_KEY);
+var code = generator.genRedeemCode(USER, VALUE, UNLOCKTIME, PRIVATE_KEY);
 
 
 // Verify code

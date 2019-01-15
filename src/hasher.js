@@ -1,8 +1,8 @@
 var ethUtil = require('ethereumjs-util');
 var ethAbi = require('ethereumjs-abi');
 
-// user, value, genTimestamp, unlockTimestamp, entropy
-const TYPES = ['address', 'uint256', 'uint256', 'uint256', 'uint256'];
+// user, value, unlockTimestamp, entropy
+const TYPES = ['address', 'uint256', 'uint256', 'uint256'];
 
 var Hasher = function () { }
 

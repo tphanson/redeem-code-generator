@@ -35,40 +35,45 @@ import generator from '@kambria/redeem-code-generator';
 
 ### Methods
 
-* priv2Addr()
+* priv2Addr(): convert private key to address
 
+  ```
   Params:
 
-  * priv: \<string> Signer's private key
+  * priv: <string> Signer's private key
 
   Outputs:
 
-  * addr: \<string> The relevant address
+  * addr: <string> The relevant address
+  ```
 
-* genRedeemCode()
+* genRedeemCode(): generate redeem code
 
+  ```
   Params:
 
-  * user: \<string> Investor's address
-  * value: \<string> Number of token
-  * unlockTimestamp: \<string> Timestamp of code unlock (in seconds)
-  * priv: \<string> Signer's private key
+  * user: <string> Investor's address
+  * value: <string> Number of token
+  * unlockTimestamp: <string> Timestamp of code unlock (in seconds)
+  * priv: <string> Signer's private key
 
   Outputs:
 
-  * code: \<object> Redeem code
+  * code: <object> Redeem code
+  ```
 
-* verifyRedeemCode()
+* verifyRedeemCode(): verify redeem code
 
+  ```
   Params:
 
-  * signerAddr: \<string> Signer's address
-  * code: \<object> Redeem code (genRedeemCode returned)
+  * signerAddr: <string> Signer's address
+  * code: <object> Redeem code (genRedeemCode returned)
 
   Outputs:
 
-  * valid: \<boolean> true/false
-
+  * valid: <boolean> true/false
+  ```
 
 ### Examples
 

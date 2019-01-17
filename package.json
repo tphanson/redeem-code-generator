@@ -1,6 +1,6 @@
 {
   "name": "@kambria/redeem-code-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "author": "Tu Phan",
   "license": "ISC",
   "dependencies": {
+    "@kambria/kambria-util": "^1.0.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "ethereumjs-abi": "^0.6.5",

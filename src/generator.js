@@ -14,6 +14,8 @@ Generator.priv2Addr = function (priv) {
 
 Generator.genRedeemCode = function (user, value, unlockTimestamp, priv) {
   priv = ethUtil.toBuffer(kamUtil.hex.padHex(priv));
+  user = kamUtil.net.formalizeAddress(user);
+  if (!user || !value || !unlockTimestamp || !priv) throw new Error('Invalid inputs');
   var entropy = kamUtil.secure.rand(256);
   var hash = hasher.hash(user, value, unlockTimestamp, entropy);
   var signedMsg = signer.sign(hash, priv);

@@ -6,6 +6,10 @@ var signer = require('./signer');
 
 var Generator = function () { }
 
+Generator.hasher = hasher;
+
+Generator.signer = signer;
+
 Generator.priv2Addr = function (priv) {
   priv = ethUtil.toBuffer(kamUtil.hex.padHex(priv));
   var addr = ethUtil.privateToAddress(priv);
@@ -28,14 +32,9 @@ Generator.genRedeemCode = function (user, value, unlockTimestamp, priv) {
   };
 }
 
-Generator.returnSigner = function (code) {
+Generator.verifyRedeemCode = function (signerAddr, code) {
   var hash = hasher.hash(code.user, code.value, code.unlockTimestamp, code.entropy);
   var address = signer.verify(hash, code.signedMsg);
-  return address;
-}
-
-Generator.verifyRedeemCode = function (signerAddr, code) {
-  var address = Generator.returnSigner(code);
   return address === signerAddr;
 }
 

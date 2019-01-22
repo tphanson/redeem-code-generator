@@ -28,9 +28,14 @@ Generator.genRedeemCode = function (user, value, unlockTimestamp, priv) {
   };
 }
 
-Generator.verifyRedeemCode = function (signerAddr, code) {
+Generator.returnSigner = function (code) {
   var hash = hasher.hash(code.user, code.value, code.unlockTimestamp, code.entropy);
   var address = signer.verify(hash, code.signedMsg);
+  return address;
+}
+
+Generator.verifyRedeemCode = function (signerAddr, code) {
+  var address = Generator.returnSigner(code);
   return address === signerAddr;
 }
 

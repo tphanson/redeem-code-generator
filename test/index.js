@@ -16,7 +16,7 @@ describe('Redeem code', function () {
   describe('priv2Addr()', function () {
     it('generate address from privatekey', function () {
       let addr = generator.priv2Addr(PRIVATE_KEY);
-      assert.equal(addr, ADDRESS);
+      assert.strictEqual(addr, ADDRESS);
     });
   });
 
@@ -24,18 +24,18 @@ describe('Redeem code', function () {
     it('should return an object', function () {
       let code = generator.genRedeemCode(USER, VALUE, UNLOCKTIME, PRIVATE_KEY);
       _CODE = code; // For testing next steps
-      assert.equal(code.user, USER);
-      assert.equal(code.value, VALUE);
-      assert.equal(code.unlockTimestamp, UNLOCKTIME);
-      assert.notEqual(code.entropy, null);
-      assert.notEqual(code.signedMsg, null);
+      assert.strictEqual(code.user, USER);
+      assert.strictEqual(code.value, VALUE);
+      assert.strictEqual(code.unlockTimestamp, UNLOCKTIME);
+      assert.notstrictEqual(code.entropy, null);
+      assert.notstrictEqual(code.signedMsg, null);
     });
   });
 
   describe('verifyRedeemCode()', function () {
     it('should return true', function () {
       let ok = generator.verifyRedeemCode(ADDRESS, _CODE);
-      assert.equal(ok, true);
+      assert.strictEqual(ok, true);
     });
   });
 });

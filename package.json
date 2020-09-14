@@ -12,14 +12,16 @@
   "author": "Tu Phan",
   "license": "ISC",
   "dependencies": {
-    "@kambria/kambria-util": "^1.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "ethereumjs-abi": "^0.6.5",
-    "ethereumjs-util": "^6.0.0"
+    "@kambria/kambria-util": "^1.0.10",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-arrow-functions": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "ethereumjs-abi": "^0.6.8",
+    "ethereumjs-util": "^7.0.5"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.9"
+    "mocha": "^8.1.3"
   }
 }

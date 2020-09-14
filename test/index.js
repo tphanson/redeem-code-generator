@@ -27,8 +27,8 @@ describe('Redeem code', function () {
       assert.strictEqual(code.user, USER);
       assert.strictEqual(code.value, VALUE);
       assert.strictEqual(code.unlockTimestamp, UNLOCKTIME);
-      assert.notstrictEqual(code.entropy, null);
-      assert.notstrictEqual(code.signedMsg, null);
+      assert.notStrictEqual(code.entropy, null);
+      assert.notStrictEqual(code.signedMsg, null);
     });
   });
 

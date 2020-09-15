@@ -12,6 +12,14 @@ const UNLOCKTIME = (NOW + DURATION).toString();
 var _CODE = null;
 
 describe('Redeem code', function () {
+  describe('genUnlocktime()', function () {
+    it('generate randome unlock timestamp', function () {
+      let sencondsHaveToWaitFor = Math.floor((Math.random() * 10) + 1);
+      let unlocktime = generator.genUnlocktime(sencondsHaveToWaitFor);
+      let comparingUnlocktime = (Math.floor(Number(new Date()) / 1000) + sencondsHaveToWaitFor).toString();
+      assert.strictEqual(unlocktime, comparingUnlocktime);
+    });
+  });
 
   describe('priv2Addr()', function () {
     it('generate address from privatekey', function () {

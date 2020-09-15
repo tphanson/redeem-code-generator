@@ -10,6 +10,11 @@ Generator.hasher = hasher;
 
 Generator.signer = signer;
 
+Generator.genUnlocktime = function (sencondsHaveToWaitFor) {
+  let now = Math.floor(Number(new Date()) / 1000);
+  return (now + sencondsHaveToWaitFor).toString();
+}
+
 Generator.priv2Addr = function (priv) {
   priv = ethUtil.toBuffer(kamUtil.hex.padHex(priv));
   var addr = ethUtil.privateToAddress(priv);

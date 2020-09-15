@@ -1,6 +1,6 @@
 ## Introduction
 
-This lib can be used for Token Distribution Potal to generate redeem code.
+This lib can be used for the Token Distribution Portal to generate redeem code.
 
 ## Prerequisite
 
@@ -12,7 +12,7 @@ npm install --save @kambria/redeem-code-generator
 
 ## How to test?
 
-Stay at root folder and run this command:
+Stay at the root folder and run this command:
 
 ```
 npm test
@@ -23,19 +23,19 @@ npm test
 ### Using in Nodejs:
 
 ```
-var generator = require('@kambria/redeem-code-generator');
+var rcg = require('@kambria/redeem-code-generator');
 ```
 
 
 ### Using in React:
 
 ```
-import generator from '@kambria/redeem-code-generator';
+import rcg from '@kambria/redeem-code-generator';
 ```
 
 ### Methods
 
-* priv2Addr(): convert private key to address
+* priv2Addr(priv): convert private key to address
 
   ```
   Params:
@@ -47,7 +47,19 @@ import generator from '@kambria/redeem-code-generator';
   * addr: <string> The relevant address
   ```
 
-* genRedeemCode(): generate redeem code
+* genUnlocktime(sencondsHaveToWaitFor): generate normalized unlocktime from the current moment
+
+  ```
+  Params:
+
+  * sencondsHaveToWaitFor: <number> The number of senconds that users have to wait till available time to redeem
+
+  Outputs:
+
+  * unlocktime: <string> The normalized unlocktime
+  ```
+
+* genRedeemCode(user, value, unlockTimestamp, priv): generate redeem code
 
   ```
   Params:
@@ -62,7 +74,7 @@ import generator from '@kambria/redeem-code-generator';
   * code: <object> Redeem code
   ```
 
-* verifyRedeemCode(): verify redeem code
+* verifyRedeemCode(signerAddr, code): verify redeem code
 
   ```
   Params:
